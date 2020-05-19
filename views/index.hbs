@@ -1,0 +1,58 @@
+<div class="container" style="background-color: honeydew; width:50rem">
+  {{!-- category select --}}
+  <div class="row mt-5 justify-content-center">
+    <div class="col-12">
+      <form action="/edit" method="POST">
+        <div class="form-group">
+          <label class="ml-2" for="exampleFormControlInput1" style="font-size: 1.5rem;">支出種類</label>
+          <select class="form-control" id="exampleFormControlSelect1">
+            <option>全部</option>
+            <option>家居物業</option>
+            <option>交通出行</option>
+            <option>休閒娛樂</option>
+            <option>餐飲食品</option>
+            <option>其他</option>
+          </select>
+        </div>
+      </form>
+    </div>
+  </div>
+  {{!--show amount--}}
+  <div class="mt-4">
+    <div class="row">
+      <div class="col">
+        <h5 class="ml-2" style="color: gray;">總金額：</h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h1 class="ml-4" style="color: orange; font-size:3rem">NTD 5000</h1>
+      </div>
+    </div>
+  </div>
+  {{!-- detail --}}
+  <div class="row mt-5 justify-content-center">
+    <div class="col-8">
+      <div class="row">
+        <div class="col-2 align-self-center">
+          <i class="fab fa-500px"></i>
+        </div>
+        <div class="col-8">
+          <div class="row">午餐</div>
+          <div class="row">2019/04/23</div>
+        </div>
+        <div class="col-2 align-self-center">60</div>
+      </div>
+    </div>
+    <div class="col-2 align-self-center">
+      <a href="">修改</a>
+      <a class="ml-2 align-self-center" href="">刪除</a>
+    </div>
+  </div>
+  {{!-- create item btn --}}
+  <div class="row justify-content-end mr-4 mt-4 mb-4">
+    <form action="./new" method="GET">
+      <button type="submit" class="btn btn-success">Success</button>
+    </form>
+  </div>
+</div>
