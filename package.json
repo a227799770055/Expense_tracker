@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "device": "nodemon app.js"
+    "device": "nodemon app.js",
+    "seed": "node ./models/seeds/seeds.js"
   },
   "keywords": [],
   "author": "",
