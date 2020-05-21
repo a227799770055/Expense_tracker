@@ -47,7 +47,9 @@
     </div>
     <div class="col-2 align-self-center">
       <a href="./record/{{this._id}}/edit">修改</a>
-      <a class="ml-2 align-self-center" href="./record/{{this._id}}/delete">刪除</a>
+      <form action="./record/{{this._id}}/delete" method="POST" class="d-inline ml-2">
+        <button type="submit" class="btn-primary">刪除</button>
+      </form>
     </div>
   </div>
   {{/each}}
