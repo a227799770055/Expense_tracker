@@ -12,4 +12,5 @@ db.once('open', () => {
   console.log('mongodb connected!')
 })
 
+
 module.exports = db

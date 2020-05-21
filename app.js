@@ -4,10 +4,18 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const port = process.env.PORT || 3000
+require('./config/mongoose')
 
 
 // 設定模板引擎
-app.engine('hbs', exphbs({ defaultLayout: 'main', extname: '.hbs' }))
+app.engine('hbs', exphbs({
+  defaultLayout: 'main', extname: '.hbs',
+  helpers: {
+    getImage: function (category, category_image) {
+      return category_image[category]
+    }
+  }
+}))
 app.set('view engine', 'hbs')
 
 // 設定 middleware
