@@ -13,7 +13,7 @@ app.engine('hbs', exphbs({
   helpers: {
     getImage: function (category, category_image) {
       return category_image[category]
-    }
+    },
   }
 }))
 app.set('view engine', 'hbs')
