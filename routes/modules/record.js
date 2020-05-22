@@ -13,7 +13,7 @@ router.get('/new', (req, res) => {
   res.render('new')
 })
 
-router.post('/:id/delete', (req, res) => {
+router.delete('/:id', (req, res) => {
   const id = req.params.id
   console.log(id)
   return record.findById(id)
@@ -48,7 +48,7 @@ router.get('/:id/edit', (req, res) => {
     })
 })
 
-router.post('/:id/edit', (req, res) => {
+router.put('/:id', (req, res) => {
   const id = req.params.id
   const body = req.body
   const name = body.name
