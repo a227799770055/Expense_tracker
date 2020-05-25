@@ -23,8 +23,6 @@ const sorting = {
   "amountDes": { index: "amount", type: 1 },
 }
 
-
-
 router.get('/', (req, res) => {
   let totalAmount = 0
   record.find()
@@ -59,6 +57,19 @@ router.post('/', (req, res) => {
       })
       .catch(error => console.log(error))
   }
+})
+
+router.get('/sort', (req, res) => {
+  let totalAmount = 0
+  const { name, way } = req.query
+  record.find()
+    .lean()
+    .sort({ [name]: way })
+    .then(record => {
+      record.forEach(item => { totalAmount += item.amount })
+      res.render('index', { record, category_image, totalAmount })
+    })
+    .catch(error => console.log(error))
 })
 
 

@@ -51,33 +51,15 @@ router.get('/:id/edit', (req, res) => {
 router.put('/:id', (req, res) => {
   const id = req.params.id
   const body = req.body
-  const name = body.name
-  const category = body.category
-  const date = body.date
-  const amount = body.amount
   return record.findById(id)
     .then(record => {
-      record.name = name
-      record.category = category
-      record.date = date
-      record.amount = amount
+      record = Object.assign(record, body)
       return record.save()
     })
     .then(() => { res.redirect('/') })
     .catch(error => console.log(error))
 })
 
-router.get('/sort', (req, res) => {
-  let totalAmount = 0
-  const { name, way } = req.query
-  record.find()
-    .lean()
-    .sort({ [name]: way })
-    .then(record => {
-      record.forEach(item => { totalAmount += item.amount })
-      res.render('index', { record, category_image, totalAmount })
-    })
-    .catch(error => console.log(error))
-})
+
 
 module.exports = router
