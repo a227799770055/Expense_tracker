@@ -30,4 +30,4 @@ This website was set up by nose.js, express and handlebars
 * All expenses can be classified by category.
 * All expenses can be sorted by date and amount.
 
-###0.1346+555888888888887 You can also run the website at this url: https://stormy-ridge-35319.herokuapp.com
+### You can also run the website at this url: https://stormy-ridge-35319.herokuapp.com
